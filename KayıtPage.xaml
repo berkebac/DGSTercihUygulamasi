@@ -1,0 +1,40 @@
+﻿<Page x:Class="WpfApplication1.Pages.KayıtPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApplication1.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="KayıtPage" >
+
+    <Grid Background="White">
+        <StackPanel Margin="0,40">
+            <WrapPanel Width="210" Orientation="Horizontal">
+                <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Ad :" Width="100" Margin="5"/>
+                <TextBox x:Name="textBoxAd" Height="23" TextWrapping="Wrap" Width="100"/>
+            </WrapPanel>
+            <WrapPanel Width="210" Orientation="Horizontal">
+                <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Soyad :" Width="100" Margin="5"/>
+                <TextBox x:Name="textBoxSoyad" Height="23" TextWrapping="Wrap" Width="100"/>
+            </WrapPanel>
+            <WrapPanel Width="210" Orientation="Horizontal">
+            <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="Okul :" Width="100" Margin="5"/>
+            <TextBox x:Name="textBox_okul" Height="23" TextWrapping="Wrap" Width="100"/>
+            </WrapPanel>
+            <WrapPanel Width="210" Orientation="Horizontal">
+                <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="Email :" Width="100" Margin="5"/>
+                <TextBox x:Name="textBoxEmail" Height="23" TextWrapping="Wrap" Width="100"/>
+            </WrapPanel>
+            <WrapPanel Width="210" Orientation="Horizontal">
+                <TextBlock x:Name="textBlock5" TextWrapping="Wrap" Text="Şifre :" Width="100" Margin="5"/>
+                <TextBox x:Name="textBox_sifre" Height="23" TextWrapping="Wrap" Width="100"/>
+            </WrapPanel>
+            <WrapPanel Width="210" Orientation="Horizontal">
+                <TextBlock x:Name="textBlock6" TextWrapping="Wrap" Text="Bölüm :" Width="100" Margin="5"/>
+                <ComboBox x:Name="comboBolum" Width="100"   />
+            </WrapPanel>
+            <Button x:Name="buttonUyeOl" Content="Üye Ol" Width="75" Click="buttonUyeOl_Click" />
+        </StackPanel>
+    </Grid>
+</Page>

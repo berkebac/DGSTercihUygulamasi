@@ -12,25 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Data.SqlClient;
-using System.Data;
-using WpfApplication1.Pages;
 
-namespace WpfApplication1
+namespace WpfApplication1.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for UzmanPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class UzmanPage : Page
     {
-        public MainWindow()
+        public UzmanPage()
         {
             InitializeComponent();
-
-            GirisPage gp = new GirisPage();
-            Main.Navigate(gp);
-
         }
-        
     }
 }
