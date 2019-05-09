@@ -26,11 +26,32 @@ namespace WpfApplication1
         public MainWindow()
         {
             InitializeComponent();
+            
+        }
 
-            GirisPage gp = new GirisPage();
-            Main.Navigate(gp);
+       
+
+        private void Main_Navigated(object sender, NavigationEventArgs e)
+        {
+            try
+            {
+                if (e.Content.ToString() == "WpfApplication1.Pages.OkulListesiPage")
+                {
+                    menu.Visibility = Visibility.Visible;
+                }
+            }
+            catch (Exception b)
+            {
+
+            }
+            
+        }
+
+        private void mi_Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem mi = (MenuItem)sender;
+            Main.Source = new Uri("/WpfApplication1;component/" + mi.Tag + ".xaml", UriKind.Relative);
 
         }
-        
     }
 }

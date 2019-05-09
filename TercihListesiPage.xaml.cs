@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +22,19 @@ namespace WpfApplication1.Pages
     /// </summary>
     public partial class UyeListesiPage : Page
     {
+        SqlConnection baglanti = new SqlConnection("Data Source=DESKTOP-LCGK9FQ\\SQLEXPRESS;Initial Catalog=DGSTercih;Integrated Security=True");
+        SqlCommand cmd = new SqlCommand();
         public UyeListesiPage()
         {
             InitializeComponent();
+            baglanti.Open();
+            cmd.CommandText = "SELECT * FROM OkulTercih";
+            cmd.Connection = baglanti;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable("OkulTercih");
+            adapter.Fill(dt);
+
+            dg.ItemsSource = dt.DefaultView;
         }
     }
 }

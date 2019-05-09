@@ -43,9 +43,13 @@ namespace WpfApplication1
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
-                MessageBox.Show("ok");
-                PageUyeEkranı pue = new PageUyeEkranı();
-                this.NavigationService.Navigate(pue);
+
+                //NavigationWindow win = new NavigationWindow(); >>> yenı pencerede açar
+                //win.Content = new OkulListesiPage();
+                //win.Show();
+
+                OkulListesiPage olp = new OkulListesiPage();
+                this.NavigationService.Navigate(olp);
             }
 
         }
