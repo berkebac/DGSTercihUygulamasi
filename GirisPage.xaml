@@ -8,7 +8,7 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="GirisPage">
 
-    <Grid Background="White">
+    <Grid x:Name="buttonUzmanGiris" Background="White">
         <StackPanel Margin="0,40">
             <WrapPanel Width="210" Orientation="Horizontal">
                 <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="E-mail :" Width="100" Margin="5"/>
@@ -20,6 +20,9 @@
             </WrapPanel>
             <Button x:Name="buttonGiris" Content="Giriş Yap" Margin="0,10,0,5"  Width="75" Click="buttonGiris_Click"/>
             <Button x:Name="buttonUyeOl" Content="Üye Ol" Width="75" Click="buttonUyeOl_Click" />
+
+            <Button x:Name="buttonuzmanGiris" Content="Uzman Giriş" Width="75" Margin="0,30,0,5" Foreground="Red" Click="buttonuzmanGiris_Click" />
+
         </StackPanel>
     </Grid>
 </Page>

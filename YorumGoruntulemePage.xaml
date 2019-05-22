@@ -1,0 +1,37 @@
+﻿<Page x:Class="WpfApplication1.YorumGoruntulemePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApplication1"
+      mc:Ignorable="d" 
+      d:DesignHeight="371.24" d:DesignWidth="816.886"
+      Title="YorumGoruntulemePage">
+
+    <Grid Background="SkyBlue">
+        
+        <WrapPanel Width="300" Orientation="Vertical" Margin="0,30">
+            <TextBlock x:Name="textBlock0" TextWrapping="Wrap" Text="Yorumun Görmek İstediğiniz Uzmanı Seçin" Width="300" Margin="5"/>
+            <ComboBox x:Name="comboUzman" Width="180" HorizontalAlignment="Right" SelectionChanged="comboUzman_SelectionChanged"   />
+        </WrapPanel>
+
+        <StackPanel Margin="0,90">
+            <WrapPanel Width="300" Orientation="Horizontal">
+                <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Yorumlayan Uzman :" Width="110" Margin="5"/>
+                <TextBox x:Name="textBoxUzmanad" Height="23" TextWrapping="Wrap" Width="180"/>
+            </WrapPanel>
+            <WrapPanel Width="300" Orientation="Horizontal">
+                <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Öğrenci Adı :" Width="110" Margin="5"/>
+                <TextBox x:Name="textBoxOgrad" Height="23" TextWrapping="Wrap" Width="180"/>
+            </WrapPanel>
+            <WrapPanel Width="300" Orientation="Horizontal" Margin="7">
+                <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="Yorum :" Width="110" Margin="5"/>
+                <TextBox x:Name="textBoxYorum" Height="90" TextWrapping="Wrap" Width="180"/>
+            </WrapPanel>
+
+        </StackPanel>
+
+
+
+    </Grid>
+</Page>

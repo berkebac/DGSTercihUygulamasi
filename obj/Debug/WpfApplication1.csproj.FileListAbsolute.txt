@@ -17,13 +17,15 @@ F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.exe
 F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.pdb
 F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\KayıtPage.g.cs
 F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\OkulListesiPage.g.cs
-F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\PageUyeEkranı.g.cs
 F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\TercihListesiPage.g.cs
 F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\UzmanPage.g.cs
 F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\KayıtPage.baml
 F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\OkulListesiPage.baml
-F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\PageUyeEkranı.baml
 F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\TercihListesiPage.baml
 F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\UzmanPage.baml
 F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\GirisPage.g.cs
 F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\GirisPage.baml
+F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\UzmanYorumPage.g.cs
+F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\UzmanYorumPage.baml
+F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\YorumGoruntulemePage.g.cs
+F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\YorumGoruntulemePage.baml

@@ -7,23 +7,46 @@
       mc:Ignorable="d" 
       d:DesignHeight="319.266" d:DesignWidth="490.596"
       Title="UzmanPage">
+    <Grid Background="SkyBlue">
+        <DataGrid x:Name="dg" AutoGenerateColumns="False" Background="SkyBlue" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding id}" ClipboardContentBinding="{x:Null}" Header="id"/>
+                <DataGridTextColumn Binding="{Binding Ad}" ClipboardContentBinding="{x:Null}" Header="Ogrenci Ad"/>
+                <DataGridTextColumn Binding="{Binding SoyAd}" ClipboardContentBinding="{x:Null}" Header="Ogrenci Soyad"/>
+                <DataGridTextColumn Binding="{Binding OkulAdi}" ClipboardContentBinding="{x:Null}" Header="Okul"/>
+                <DataGridTextColumn Binding="{Binding BolumAdi}" ClipboardContentBinding="{x:Null}" Header="Bölüm"/>
+                <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="Tercihleri Görüntüle">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Tercihleri Görüntüle" x:Name="btntercih" Click="btntercihGoruntule_Click" Width="120" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel x:Name="stackTercih" Visibility="Hidden">
+            <Button x:Name="buttonGoster" Content="Yorumla" Width="100" Margin="10,10" Height="30"  Foreground="#FF1E722D" BorderBrush="#FF020202" Background="White" FontWeight="Bold" Click="buttonGoster_Click"></Button>
 
-    <Grid Background="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="299*"/>
-        </Grid.RowDefinitions>
-        <Menu x:Name="menu" Grid.Row="0">
-            <MenuItem Header="Uzman">
-                <MenuItem Header="Profilim" Tag="YakitTürüKayıtPage" />
-                <MenuItem Header="Çıkış Yap" Tag="YakıtAlımıKayıtPage" />
-            </MenuItem>
-            <MenuItem Header="Ogrenci Listesi" Tag="YakıtAlımıPage" />
-            <MenuItem Header="Tercih Listesi" Tag="StokDurumuPage" />
-        </Menu>
-        <Frame x:Name="frame" Padding="10" Background="SkyBlue" Grid.Row="1" Source="/WpfApplication1;component/Windows/TercihListesi.xaml" Content="" NavigationUIVisibility="Hidden"/>
-
-
+            <DataGrid x:Name="dgTercihler" AutoGenerateColumns="False" Background="SkyBlue" CanUserAddRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding id}" ClipboardContentBinding="{x:Null}" Header="Tercih Sırası"/>
+                    <DataGridTextColumn Binding="{Binding Ad}" ClipboardContentBinding="{x:Null}" Header="Ogrenci Adı"/>
+                    <DataGridTextColumn Binding="{Binding OkulAdi}" ClipboardContentBinding="{x:Null}" Header="Okul Adı"/>
+                    <DataGridTextColumn Binding="{Binding Bolum}" ClipboardContentBinding="{x:Null}" Header="Bolum"/>
+                    <DataGridTextColumn Binding="{Binding ProgramTuru}" ClipboardContentBinding="{x:Null}" Header="ProgramTuru"/>
+                    <DataGridTextColumn Binding="{Binding UniversiteTuru}" ClipboardContentBinding="{x:Null}" Header="UniversiteTuru"/>
+                    <DataGridTextColumn Binding="{Binding BursTuru}" ClipboardContentBinding="{x:Null}" Header="BursTuru"/>
+                    <DataGridTextColumn Binding="{Binding Sehir}" ClipboardContentBinding="{x:Null}" Header="Sehir"/>
+                </DataGrid.Columns>
+            </DataGrid>
+           
+        </StackPanel>
+        <WrapPanel x:Name="wpYorum" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Visibility="Hidden" Margin="10,10">
+            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Yorumunuz:" Width="120" Margin="5"/>
+            <WrapPanel Orientation="Vertical">
+                <TextBox x:Name="tbYorum" Width="400" Height="150" />
+                <Button x:Name="buttonyorumGonder" Content="Gönder" Click="buttonyorumGonder_Click"></Button>
+            </WrapPanel>
+        </WrapPanel>
     </Grid>
-
 </Page>

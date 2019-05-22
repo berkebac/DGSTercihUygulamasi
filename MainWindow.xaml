@@ -7,8 +7,23 @@
         mc:Ignorable="d"
         Title="DGS Tercih Ugulaması Giriş" Height="650" Width="925">
     <Grid>
-        <StackPanel Margin="0,11,0,0"/>
-        <Frame x:Name="Main" Margin="0,36,0,0"></Frame>
-    
+        <Menu x:Name="menu" Grid.Row="0" Visibility="Hidden">
+            <MenuItem Header="Üye" >
+                <MenuItem Header="Çıkış Yap" Tag="GirisPage" Click="mi_Click" />
+            </MenuItem>
+            <MenuItem Header="Okul Listesi" Tag="OkulListesiPage" Click="mi_Click"/>
+            <MenuItem Header="Tercih Listesi" Tag="TercihListesiPage" Click="mi_Click" />
+            <MenuItem Header="Tercih Yorumları" Tag="YorumGoruntulemePage" Click="mi_Click" />
+        </Menu>
+
+        <Menu x:Name="menu2" Visibility="Hidden">
+            <MenuItem Header="Uzman">
+                <MenuItem Header="Çıkış Yap" Tag="GirisPage" Click="mi_Click" />
+            </MenuItem>
+            <MenuItem Header="Ogrenci Listesi" Tag="UzmanPage" Click="mi_Click" />
+            <MenuItem Header="Tercih Listesi" Tag="UzmanPage" Click="mi_Click" />
+        </Menu>
+        <Frame x:Name="Main" Margin="0,36,0,0" Grid.Row="1" Source="/WpfApplication1;component/GirisPage.xaml" Navigated="Main_Navigated"/>
+
     </Grid>
 </Window>

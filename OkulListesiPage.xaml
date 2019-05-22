@@ -13,41 +13,48 @@
         <StackPanel>
             <WrapPanel>
                 <WrapPanel Orientation="Horizontal">
-                        <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Bölüm :"  Margin="5"/>
-                    <ComboBox Width="80" Height="20">
-                    </ComboBox>
+                    <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="Burs Türü :"  Margin="5"/>
+                    <ComboBox x:Name="comboBurs" Width="80" Height="20" SelectedIndex="0" SelectionChanged="comboBurs_SelectionChanged"/>
+                </WrapPanel>
+                <WrapPanel Orientation="Horizontal">
+                    <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Bölüm :"  Margin="5"/>
+                    <ComboBox x:Name="comboBolum" Width="80" Height="20" SelectedIndex="0" SelectionChanged="comboBolum_SelectionChanged"/>
                 </WrapPanel>
                 <WrapPanel Orientation="Horizontal">
                     <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Prog.Türü :"  Margin="5"/>
-                    <ComboBox Width="80" Height="20">
-                    </ComboBox>
+                    <ComboBox x:Name="comboProgturu" Width="80" Height="20" SelectedIndex="0" SelectionChanged="comboProgturu_SelectionChanged"/>
                 </WrapPanel>
 
                 <WrapPanel Orientation="Horizontal">
                     <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="Uni.Türü :"  Margin="5"/>
-                    <ComboBox Width="80" Height="20">
-                    </ComboBox>
-                </WrapPanel>
-                <WrapPanel Orientation="Horizontal">
-                    <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="Burs Türü :"  Margin="5"/>
-                    <ComboBox Width="80" Height="20">
-                    </ComboBox>
+                    <ComboBox x:Name="comboUnituru" Width="80" Height="20" SelectedIndex="0" SelectionChanged="comboUnituru_SelectionChanged"/>
                 </WrapPanel>
                 <WrapPanel Orientation="Horizontal">
                     <TextBlock x:Name="textBlock5" TextWrapping="Wrap" Text="Şehir :"  Margin="5"/>
-                    <ComboBox Width="80" Height="20">
-                    </ComboBox>
+                    <ComboBox x:Name="comboSehir" Width="80" Height="20" SelectedIndex="0" SelectionChanged="comboSehir_SelectionChanged"/>
                 </WrapPanel>
-                <Button Width="80" Content="Listele" Margin="10,3"></Button>
             </WrapPanel>
-            <DataGrid x:Name="dg" AutoGenerateColumns="False" Background="SkyBlue">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding PompaNo}" ClipboardContentBinding="{x:Null}" Header="Okul Adı"/>
-                <DataGridTextColumn Binding="{Binding YakıtTürü.YakıtTürüAdı}" ClipboardContentBinding="{x:Null}" Header="Bölüm"/>
-                <DataGridTextColumn Binding="{Binding YakıtTürü.Stok}" ClipboardContentBinding="{x:Null}" Header="Kontenjan"/>
-                <DataGridTextColumn Binding="{Binding YakıtTürü.Stok}" ClipboardContentBinding="{x:Null}" Header="Puan"/>
-            </DataGrid.Columns>
-        </DataGrid>
+            <DataGrid x:Name="dg" Background="SkyBlue" AutoGenerateColumns="False" CanUserAddRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding id}" ClipboardContentBinding="{x:Null}"/>
+                    <DataGridTextColumn Header="Okul Adı" Binding="{Binding OkulAdi}" ClipboardContentBinding="{x:Null}"/>
+                    <DataGridTextColumn Header="Bolum" Binding="{Binding Bolum}" ClipboardContentBinding="{x:Null}"/>
+                    <DataGridTextColumn Header="Program Türü" Binding="{Binding ProgramTuru}" ClipboardContentBinding="{x:Null}"/>
+                    <DataGridTextColumn Header="Universite Türü" Binding="{Binding UniversiteTuru}" ClipboardContentBinding="{x:Null}"/>
+                    <DataGridTextColumn Header="Burs Türü" Binding="{Binding BursTuru}" ClipboardContentBinding="{x:Null}"/>
+                    <DataGridTextColumn Header="Şehir" Binding="{Binding Sehir}" ClipboardContentBinding="{x:Null}"/>
+                    <DataGridTextColumn Header="Puan" Binding="{Binding Puan}" ClipboardContentBinding="{x:Null}"/>
+                    <DataGridTextColumn Header="Kontenjan" Binding="{Binding Kontenjan}" ClipboardContentBinding="{x:Null}"/>
+                    <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="Tercih">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="tercih" x:Name="btntercih" Click="btntercih_Click" Width="60" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+
+            </DataGrid>
         </StackPanel>
     </Grid>
 </Page>

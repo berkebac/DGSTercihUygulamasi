@@ -33,6 +33,9 @@ namespace WpfApplication1
 
         }
 
+        public static String id;
+        public static String uid;
+
         private void buttonGiris_Click(object sender, RoutedEventArgs e)
         {
             if(baglanti.State.ToString()=="Close")
@@ -40,10 +43,11 @@ namespace WpfApplication1
                 baglanti.Open();
             }
             cmd.CommandText = "Select * From Ogrenci WHERE Ad='" + textBox_email.Text + "'";
+
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
-
+                id = dr[0].ToString();
                 //NavigationWindow win = new NavigationWindow(); >>> yenı pencerede açar
                 //win.Content = new OkulListesiPage();
                 //win.Show();
@@ -58,6 +62,24 @@ namespace WpfApplication1
         {
             KayıtPage kp = new KayıtPage();
             this.NavigationService.Navigate(kp);
+        }
+
+
+        private void buttonuzmanGiris_Click(object sender, RoutedEventArgs e)
+        {
+            cmd.CommandText = "Select * From Uzman WHERE Ad='" + textBox_email.Text + "'";
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                uid = dr[0].ToString();
+                //NavigationWindow win = new NavigationWindow(); >>> yenı pencerede açar
+                //win.Content = new OkulListesiPage();
+                //win.Show();
+
+                UzmanPage up = new UzmanPage();
+                this.NavigationService.Navigate(up);
+            }
         }
     }
 }

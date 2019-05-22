@@ -70,6 +70,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UzmanYorumPage.xaml.cs">
+      <DependentUpon>UzmanYorumPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="YorumGoruntulemePage.xaml.cs">
+      <DependentUpon>YorumGoruntulemePage.xaml</DependentUpon>
+    </Compile>
     <Page Include="GirisPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -82,6 +88,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Baglanti.cs" />
     <Compile Include="GirisPage.xaml.cs">
       <DependentUpon>GirisPage.xaml</DependentUpon>
     </Compile>
@@ -97,15 +104,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PageUyeEkranı.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="TercihListesiPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UzmanPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UzmanYorumPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="YorumGoruntulemePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -116,9 +127,6 @@
     </Compile>
     <Compile Include="OkulListesiPage.xaml.cs">
       <DependentUpon>OkulListesiPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PageUyeEkranı.xaml.cs">
-      <DependentUpon>PageUyeEkranı.xaml</DependentUpon>
     </Compile>
     <Compile Include="TercihListesiPage.xaml.cs">
       <DependentUpon>TercihListesiPage.xaml</DependentUpon>

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApplication1.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="332.414" d:DesignWidth="455.172"
+      d:DesignHeight="365.878" d:DesignWidth="635.88"
       Title="UyeListesiPage">
 
     <Grid Background="SkyBlue">
@@ -18,17 +18,28 @@
             </WrapPanel>
             <DataGrid x:Name="dg" AutoGenerateColumns="False" Background="SkyBlue">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding YakıtTürü.Stok}" ClipboardContentBinding="{x:Null}" Header="Tercih Sırası"/>
-                    <DataGridTextColumn Binding="{Binding PompaNo}" ClipboardContentBinding="{x:Null}" Header="Okul Adı"/>
-                    <DataGridTextColumn Binding="{Binding YakıtTürü.YakıtTürüAdı}" ClipboardContentBinding="{x:Null}" Header="Bölüm"/>
-                    <DataGridTextColumn Binding="{Binding YakıtTürü.Stok}" ClipboardContentBinding="{x:Null}" Header="Kontenjan"/>
-                    <DataGridTextColumn Binding="{Binding YakıtTürü.Stok}" ClipboardContentBinding="{x:Null}" Header="Puan"/>
+                    <DataGridTextColumn Binding="{Binding Ad}" ClipboardContentBinding="{x:Null}" Header="Ogrenci Adı"/>
+                    <DataGridTextColumn Binding="{Binding OkulAdi}" ClipboardContentBinding="{x:Null}" Header="Okul Adı"/>
+                    <DataGridTextColumn Binding="{Binding Bolum}" ClipboardContentBinding="{x:Null}" Header="Bolum"/>
+                    <DataGridTextColumn Binding="{Binding ProgramTuru}" ClipboardContentBinding="{x:Null}" Header="ProgramTuru"/>
+                    <DataGridTextColumn Binding="{Binding UniversiteTuru}" ClipboardContentBinding="{x:Null}" Header="UniversiteTuru"/>
+                    <DataGridTextColumn Binding="{Binding BursTuru}" ClipboardContentBinding="{x:Null}" Header="BursTuru"/>
+                    <DataGridTextColumn Binding="{Binding Sehir}" ClipboardContentBinding="{x:Null}" Header="Sehir"/>
+                    <DataGridTextColumn Binding="{Binding Puan}" ClipboardContentBinding="{x:Null}" Header="Puan"/>
+                    <DataGridTextColumn Binding="{Binding Kontenjan}" ClipboardContentBinding="{x:Null}" Header="Kontenjan"/>
+                    <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="Tercih">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="sil" x:Name="b" Width="60" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+
                 </DataGrid.Columns>
             </DataGrid>
 
         </StackPanel>
-        <Button x:Name="btnTercihYolla" Height="20" Width="90" Content="Tercih L. Paylaş" Margin="17,302,348,10" />
-        <Button x:Name="btnSıfırla" Height="20" Width="90" Content="Tercih L. Temizle" Margin="112,302,253,10" />
 
     </Grid>
 </Page>

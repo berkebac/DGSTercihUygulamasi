@@ -38,6 +38,9 @@ namespace WpfApplication1
                 if (e.Content.ToString() == "WpfApplication1.Pages.OkulListesiPage")
                 {
                     menu.Visibility = Visibility.Visible;
+                }else if(e.Content.ToString() == "WpfApplication1.Pages.UzmanPage")
+                {
+                    menu2.Visibility = Visibility.Visible;
                 }
             }
             catch (Exception b)

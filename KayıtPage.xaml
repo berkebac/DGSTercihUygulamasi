@@ -19,8 +19,8 @@
                 <TextBox x:Name="textBoxSoyad" Height="23" TextWrapping="Wrap" Width="100"/>
             </WrapPanel>
             <WrapPanel Width="210" Orientation="Horizontal">
-            <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="Okul :" Width="100" Margin="5"/>
-            <TextBox x:Name="textBox_okul" Height="23" TextWrapping="Wrap" Width="100"/>
+                <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="Okul :" Width="100" Margin="5"/>
+                <ComboBox x:Name="comboOkul" Width="100"   />
             </WrapPanel>
             <WrapPanel Width="210" Orientation="Horizontal">
                 <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="Email :" Width="100" Margin="5"/>

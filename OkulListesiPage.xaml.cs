@@ -28,9 +28,10 @@ namespace WpfApplication1.Pages
         {
             InitializeComponent();
 
+            //Giris yapan kullanıcının idsi >>>  GirisPage.id
             comboBoxDefaultDeger();
             baglanti.Open();
-            cmd.CommandText = "SELECT * FROM OkulTercih ok,Okul o WHERE ok.OkulId=o.id";
+            cmd.CommandText = "SELECT * FROM OkulTercih ok,Okul o WHERE ok.OkulId=o.id ";
             cmd.Connection = baglanti;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable("OkulTercih");
@@ -162,6 +163,16 @@ namespace WpfApplication1.Pages
             }
 
         }
+       
+     
+        private void btntercih_Click(object sender, RoutedEventArgs e)
+        {
+            //Giris yapan kullanıcının idsi >>>  GirisPage.id
+            int Tercihid = Convert.ToInt32(((TextBlock)dg.Columns[0].GetCellContent(dg.SelectedItem)).Text);
+            cmd.CommandText = "INSERT INTO Tercihler (Bolum,ProgramTuru,UniversiteTuru,BursTuru,Sehir,OkulId,OgrenciId) SELECT Bolum,ProgramTuru,UniversiteTuru,BursTuru,Sehir,OkulId,'"+ GirisPage.id + "' FROM OkulTercih WHERE id='" + Tercihid + "'";
+            cmd.Connection = baglanti;
+            cmd.ExecuteNonQuery();
+        }
 
         private void comboBolum_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -186,6 +197,104 @@ namespace WpfApplication1.Pages
 
             }
         }
+
+        private void comboBurs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (comboBurs.SelectedIndex != 0)
+            {
+                cmd.CommandText = "SELECT * FROM OkulTercih ok,Okul o WHERE ok.OkulId=o.id and BursTuru='" + comboBurs.SelectedItem + "'";
+                cmd.Connection = baglanti;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("OkulTercih");
+                adapter.Fill(dt);
+
+                dg.ItemsSource = dt.DefaultView;
+            }
+            else
+            {
+                cmd.CommandText = "SELECT * FROM OkulTercih ok,Okul o WHERE ok.OkulId=o.id";
+                cmd.Connection = baglanti;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("OkulTercih");
+                adapter.Fill(dt);
+                dg.ItemsSource = dt.DefaultView;
+
+            }
+        }
+
+        private void comboProgturu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (comboProgturu.SelectedIndex != 0)
+            {
+                cmd.CommandText = "SELECT * FROM OkulTercih ok,Okul o WHERE ok.OkulId=o.id and ProgramTuru='" + comboProgturu.SelectedItem + "'";
+                cmd.Connection = baglanti;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("OkulTercih");
+                adapter.Fill(dt);
+
+                dg.ItemsSource = dt.DefaultView;
+            }
+            else
+            {
+                cmd.CommandText = "SELECT * FROM OkulTercih ok,Okul o WHERE ok.OkulId=o.id";
+                cmd.Connection = baglanti;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("OkulTercih");
+                adapter.Fill(dt);
+                dg.ItemsSource = dt.DefaultView;
+
+            }
+        }
+
+        private void comboUnituru_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (comboUnituru.SelectedIndex != 0)
+            {
+                cmd.CommandText = "SELECT * FROM OkulTercih ok,Okul o WHERE ok.OkulId=o.id and UniversiteTuru='" + comboUnituru.SelectedItem + "'";
+                cmd.Connection = baglanti;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("OkulTercih");
+                adapter.Fill(dt);
+
+                dg.ItemsSource = dt.DefaultView;
+            }
+            else
+            {
+                cmd.CommandText = "SELECT * FROM OkulTercih ok,Okul o WHERE ok.OkulId=o.id";
+                cmd.Connection = baglanti;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("OkulTercih");
+                adapter.Fill(dt);
+                dg.ItemsSource = dt.DefaultView;
+
+            }
+
+        }
+
+        private void comboSehir_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (comboSehir.SelectedIndex != 0)
+            {
+                cmd.CommandText = "SELECT * FROM OkulTercih ok,Okul o WHERE ok.OkulId=o.id and Sehir='" + comboSehir.SelectedItem + "'";
+                cmd.Connection = baglanti;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("OkulTercih");
+                adapter.Fill(dt);
+
+                dg.ItemsSource = dt.DefaultView;
+            }
+            else
+            {
+                cmd.CommandText = "SELECT * FROM OkulTercih ok,Okul o WHERE ok.OkulId=o.id";
+                cmd.Connection = baglanti;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("OkulTercih");
+                adapter.Fill(dt);
+                dg.ItemsSource = dt.DefaultView;
+
+            }
+        }
+
     }
 }
 

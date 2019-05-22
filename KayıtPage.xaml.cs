@@ -51,6 +51,28 @@ namespace WpfApplication1.Pages
                 MessageBox.Show("Hata" + e.Message);   
                 throw;
             }
+            comboBoxDoldur2();
+        }
+        void comboBoxDoldur2()
+        {
+            cmd.Connection = baglanti;
+            cmd.CommandText = "SELECT * FROM Okul";
+            try
+            {
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    String b = dr["OkulAdi"].ToString();
+                    comboOkul.Items.Add(b);
+                }
+                dr.Close();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Hata" + e.Message);
+                throw;
+            }
 
         }
 
@@ -58,14 +80,10 @@ namespace WpfApplication1.Pages
         {
             
             cmd.Connection = baglanti;
-            cmd.CommandText = "INSERT INTO Ogrenci (Ad,SoyAd,Okul,Bolum,Email,Sifre) values('" + textBoxAd.Text + "' , '" + textBoxSoyad.Text + "', '" + textBox_okul.Text + "' , '" + comboBolum.SelectedItem + "' , '" + textBoxEmail.Text + "'  , '" + textBox_sifre.Text + "' )";
+            cmd.CommandText = "INSERT INTO Ogrenci (Ad,SoyAd,OkulId,BolumId,Email,Sifre) values('" + textBoxAd.Text + "' , '" + textBoxSoyad.Text + "', '" + comboOkul.SelectedIndex + "' , '" + comboBolum.SelectedIndex + "' , '" + textBoxEmail.Text + "'  , '" + textBox_sifre.Text + "' )";
             SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
-            {
-                MessageBox.Show("ok");
+            MessageBox.Show("Kayıt oldun,giriş ekranına yönlendiriliyorsun.");
 
-            
-            }
             GirisPage gp = new GirisPage();
             this.NavigationService.Navigate(gp);
         }
