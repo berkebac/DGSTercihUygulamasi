@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
-        Title="DGS Tercih Ugulaması Giriş" Height="650" Width="925">
+        Title="DGS Tercih Ugulaması" Height="650" Width="925">
     <Grid>
         <Menu x:Name="menu" Grid.Row="0" Visibility="Hidden">
             <MenuItem Header="Üye" >
@@ -21,7 +21,7 @@
                 <MenuItem Header="Çıkış Yap" Tag="GirisPage" Click="mi_Click" />
             </MenuItem>
             <MenuItem Header="Ogrenci Listesi" Tag="UzmanPage" Click="mi_Click" />
-            <MenuItem Header="Tercih Listesi" Tag="UzmanPage" Click="mi_Click" />
+           
         </Menu>
         <Frame x:Name="Main" Margin="0,36,0,0" Grid.Row="1" Source="/WpfApplication1;component/GirisPage.xaml" Navigated="Main_Navigated"/>
 

@@ -169,7 +169,7 @@ namespace WpfApplication1.Pages
         {
             //Giris yapan kullanıcının idsi >>>  GirisPage.id
             int Tercihid = Convert.ToInt32(((TextBlock)dg.Columns[0].GetCellContent(dg.SelectedItem)).Text);
-            cmd.CommandText = "INSERT INTO Tercihler (Bolum,ProgramTuru,UniversiteTuru,BursTuru,Sehir,OkulId,OgrenciId) SELECT Bolum,ProgramTuru,UniversiteTuru,BursTuru,Sehir,OkulId,'"+ GirisPage.id + "' FROM OkulTercih WHERE id='" + Tercihid + "'";
+            cmd.CommandText = "INSERT INTO Tercihler (Bolum,ProgramTuru,UniversiteTuru,BursTuru,Sehir,OkulId,OgrenciId,Puan,Kontenjan) SELECT Bolum,ProgramTuru,UniversiteTuru,BursTuru,Sehir,OkulId,'"+ GirisPage.id + "',Puan,Kontenjan FROM OkulTercih WHERE id='" + Tercihid + "'";
             cmd.Connection = baglanti;
             cmd.ExecuteNonQuery();
         }

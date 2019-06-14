@@ -10,13 +10,8 @@
 
     <Grid Background="SkyBlue">
         <StackPanel>
-            <WrapPanel Orientation="Horizontal">
-                <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Listeleme Seçenekleri : " Width="120" Margin="5"/>
-                <ComboBox Width="150" Height="20">
-                    <ComboBoxItem Content="Okul Puanına Göre Listele"/>
-                </ComboBox>
-            </WrapPanel>
-            <DataGrid x:Name="dg" AutoGenerateColumns="False" Background="SkyBlue">
+           
+            <DataGrid x:Name="dg" AutoGenerateColumns="False" Background="SkyBlue" CanUserAddRows="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Ad}" ClipboardContentBinding="{x:Null}" Header="Ogrenci Adı"/>
                     <DataGridTextColumn Binding="{Binding OkulAdi}" ClipboardContentBinding="{x:Null}" Header="Okul Adı"/>

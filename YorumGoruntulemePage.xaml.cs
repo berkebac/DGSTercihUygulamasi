@@ -71,7 +71,7 @@ namespace WpfApplication1
             if(dr.Read())
             {
 
-                textBoxUzmanad.Text = dr["Ad"].ToString();
+               
                 textBoxOgrad.Text= dr["Ad"].ToString();
                 textBoxYorum.Text = dr["Yorum"].ToString();
             }

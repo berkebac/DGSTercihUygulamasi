@@ -43,7 +43,7 @@ namespace WpfApplication1
                 baglanti.Open();
             }
             cmd.CommandText = "Select * From Ogrenci WHERE Email='" + textBox_email.Text + "' AND Sifre='" + textBox_sifre.Text + "' ";
-
+            // cmd.CommandText = "Select * From Ogrenci WHERE Ad='" + textBox_email.Text + "' ";
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {

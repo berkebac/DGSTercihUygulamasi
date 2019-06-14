@@ -29,7 +29,6 @@
 
             <DataGrid x:Name="dgTercihler" AutoGenerateColumns="False" Background="SkyBlue" CanUserAddRows="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding id}" ClipboardContentBinding="{x:Null}" Header="Tercih Sırası"/>
                     <DataGridTextColumn Binding="{Binding Ad}" ClipboardContentBinding="{x:Null}" Header="Ogrenci Adı"/>
                     <DataGridTextColumn Binding="{Binding OkulAdi}" ClipboardContentBinding="{x:Null}" Header="Okul Adı"/>
                     <DataGridTextColumn Binding="{Binding Bolum}" ClipboardContentBinding="{x:Null}" Header="Bolum"/>
