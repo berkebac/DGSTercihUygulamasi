@@ -37,5 +37,17 @@ namespace WpfApplication1.Pages
 
             dg.ItemsSource = dt.DefaultView;
         }
+
+        private void b_Click(object sender, RoutedEventArgs e)
+        {
+            int silinecekid = Convert.ToInt32(((TextBlock)dg.Columns[0].GetCellContent(dg.SelectedItem)).Text);
+            cmd.CommandText = "SELECT * FROM Tercihler t WHERE t.id='" + silinecekid + "'";
+            cmd.Connection = baglanti;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable("Tercihler");
+            adapter.Fill(dt);
+
+            dg.ItemsSource = dt.DefaultView;
+        }
     }
 }

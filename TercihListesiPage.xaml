@@ -13,6 +13,7 @@
            
             <DataGrid x:Name="dg" AutoGenerateColumns="False" Background="SkyBlue" CanUserAddRows="False">
                 <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding id}" ClipboardContentBinding="{x:Null}" Header="id"/>
                     <DataGridTextColumn Binding="{Binding Ad}" ClipboardContentBinding="{x:Null}" Header="Ogrenci Adı"/>
                     <DataGridTextColumn Binding="{Binding OkulAdi}" ClipboardContentBinding="{x:Null}" Header="Okul Adı"/>
                     <DataGridTextColumn Binding="{Binding Bolum}" ClipboardContentBinding="{x:Null}" Header="Bolum"/>
@@ -25,7 +26,7 @@
                     <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="Tercih">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="sil" x:Name="b" Width="60" />
+                                <Button Content="sil" x:Name="b" Width="60" Click="b_Click" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
