@@ -39,17 +39,34 @@ namespace WpfApplication1.Pages
         private void btntercihGoruntule_Click(object sender, RoutedEventArgs e)
         {
             ogrid = Convert.ToInt32(((TextBlock)dg.Columns[0].GetCellContent(dg.SelectedItem)).Text);
+            ogradıyaz();
 
-            
-            cmd.CommandText = "SELECT* FROM Tercihler t, Okul ok,Ogrenci o WHERE t.OkulId = ok.id AND t.OgrenciId = o.id AND OgrenciId='" + ogrid + "'";
+
+            cmd.CommandText = "SELECT * FROM Tercihler t, Okul ok,Ogrenci o WHERE t.OkulId = ok.id AND t.OgrenciId = o.id AND OgrenciId='" + ogrid + "'";
             cmd.Connection = baglanti;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable("Ogrenci");
             adapter.Fill(dt);
+            
             dg.Visibility = Visibility.Hidden;
             stackTercih.Visibility = Visibility.Visible;
             dgTercihler.ItemsSource = dt.DefaultView;
             cmd.ExecuteNonQuery();
+        }
+
+        void ogradıyaz()
+        {
+            cmd.CommandText = "SELECT * FROM Tercihler t,Ogrenci o WHERE t.OgrenciId = o.id  AND OgrenciId='" + ogrid + "'";
+            cmd.Connection = baglanti;
+            cmd.ExecuteNonQuery();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                tbOgrenciAdi.Text = dr["Ad"].ToString() +" "+ dr["SoyAd"].ToString();
+            }
+            dr.Close();
+
+
         }
 
         private void buttonGoster_Click(object sender, RoutedEventArgs e)

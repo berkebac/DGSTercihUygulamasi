@@ -80,7 +80,7 @@ namespace WpfApplication1.Pages
         {
             
             cmd.Connection = baglanti;
-            cmd.CommandText = "INSERT INTO Ogrenci (Ad,SoyAd,OkulId,BolumId,Email,Sifre) values('" + textBoxAd.Text + "' , '" + textBoxSoyad.Text + "', '" + comboOkul.SelectedIndex + "' , '" + comboBolum.SelectedIndex + "' , '" + textBoxEmail.Text + "'  , '" + textBox_sifre.Text + "' )";
+            cmd.CommandText = "INSERT INTO Ogrenci (Ad,SoyAd,OkulId,BolumId,Email,Sifre) values('" + textBoxAd.Text + "' , '" + textBoxSoyad.Text + "', '" + (comboOkul.SelectedIndex+1) + "' , '" + (comboBolum.SelectedIndex+1) + "' , '" + textBoxEmail.Text + "'  , '" + textBox_sifre.Text + "' )";
             SqlDataReader dr = cmd.ExecuteReader();
             MessageBox.Show("Kayıt oldun,giriş ekranına yönlendiriliyorsun.");
 

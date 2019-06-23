@@ -38,9 +38,12 @@ namespace WpfApplication1
                 if (e.Content.ToString() == "WpfApplication1.Pages.OkulListesiPage")
                 {
                     menu.Visibility = Visibility.Visible;
-                }else if(e.Content.ToString() == "WpfApplication1.Pages.UzmanPage")
+                    menu2.Visibility = Visibility.Hidden;
+                }
+                else if(e.Content.ToString() == "WpfApplication1.Pages.UzmanPage")
                 {
                     menu2.Visibility = Visibility.Visible;
+                    menu.Visibility = Visibility.Hidden;
                 }
             }
             catch (Exception b)
@@ -52,8 +55,7 @@ namespace WpfApplication1
 
         private void mi_Click(object sender, RoutedEventArgs e)
         {
-            MenuItem mi = (MenuItem)sender;
-            Main.Source = new Uri("/WpfApplication1;component/" + mi.Tag + ".xaml", UriKind.Relative);
+            MenuItem mi = (MenuItem)sender;            Main.Source = new Uri("/WpfApplication1;component/" + mi.Tag + ".xaml", UriKind.Relative);
 
         }
     }

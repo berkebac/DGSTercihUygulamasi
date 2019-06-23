@@ -31,12 +31,11 @@ namespace WpfApplication1.Pages
             //Giris yapan kullanıcının idsi >>>  GirisPage.id
             comboBoxDefaultDeger();
             baglanti.Open();
-            cmd.CommandText = "SELECT * FROM OkulTercih ok,Okul o WHERE ok.OkulId=o.id ";
+            cmd.CommandText = "SELECT * FROM OkulTercih";
             cmd.Connection = baglanti;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable("OkulTercih");
             adapter.Fill(dt);
-
             dg.ItemsSource = dt.DefaultView;
             comboBoxDoldur();
         }
@@ -163,22 +162,30 @@ namespace WpfApplication1.Pages
             }
 
         }
-       
-     
+        
         private void btntercih_Click(object sender, RoutedEventArgs e)
         {
-            //Giris yapan kullanıcının idsi >>>  GirisPage.id
             int Tercihid = Convert.ToInt32(((TextBlock)dg.Columns[0].GetCellContent(dg.SelectedItem)).Text);
-            cmd.CommandText = "INSERT INTO Tercihler (Bolum,ProgramTuru,UniversiteTuru,BursTuru,Sehir,OkulId,OgrenciId,Puan,Kontenjan) SELECT Bolum,ProgramTuru,UniversiteTuru,BursTuru,Sehir,OkulId,'"+ GirisPage.id + "',Puan,Kontenjan FROM OkulTercih WHERE id='" + Tercihid + "'";
+
+            //Giris yapan kullanıcının idsi >>>  GirisPage.id
+            cmd.CommandText = "INSERT INTO Tercihler (Bolum,ProgramTuru,UniversiteTuru,BursTuru,Sehir,OkulId,OgrenciId,Puan,Kontenjan) SELECT Bolum,ProgramTuru,UniversiteTuru,BursTuru,Sehir,id,'"+ GirisPage.id + "',Puan,Kontenjan FROM OkulTercih WHERE id='" + Tercihid + "'";
             cmd.Connection = baglanti;
             cmd.ExecuteNonQuery();
+
+            cmd.CommandText = "SELECT * FROM OkulTercih WHERE id!='" + Tercihid + "'";
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable("OkulTercih");
+            adapter.Fill(dt);
+            dg.ItemsSource = dt.DefaultView;
+
+            MessageBox.Show("Tercih Listesine Gönderildi.");
         }
 
         private void comboBolum_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (comboBolum.SelectedIndex != 0)
             {
-                cmd.CommandText = "SELECT * FROM OkulTercih ok,Okul o WHERE ok.OkulId=o.id and Bolum='" + comboBolum.SelectedItem + "'";
+                cmd.CommandText = "SELECT * FROM OkulTercih ok WHERE  Bolum='" + comboBolum.SelectedItem + "'";
                 cmd.Connection = baglanti;
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable("OkulTercih");
@@ -188,7 +195,7 @@ namespace WpfApplication1.Pages
             }
             else
             {
-                cmd.CommandText = "SELECT * FROM OkulTercih ok,Okul o WHERE ok.OkulId=o.id";
+                cmd.CommandText = "SELECT * FROM OkulTercih";
                 cmd.Connection = baglanti;
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable("OkulTercih");
@@ -202,7 +209,7 @@ namespace WpfApplication1.Pages
         {
             if (comboBurs.SelectedIndex != 0)
             {
-                cmd.CommandText = "SELECT * FROM OkulTercih ok,Okul o WHERE ok.OkulId=o.id and BursTuru='" + comboBurs.SelectedItem + "'";
+                cmd.CommandText = "SELECT * FROM OkulTercih WHERE BursTuru='" + comboBurs.SelectedItem + "'";
                 cmd.Connection = baglanti;
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable("OkulTercih");
@@ -212,7 +219,7 @@ namespace WpfApplication1.Pages
             }
             else
             {
-                cmd.CommandText = "SELECT * FROM OkulTercih ok,Okul o WHERE ok.OkulId=o.id";
+                cmd.CommandText = "SELECT * FROM OkulTercih";
                 cmd.Connection = baglanti;
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable("OkulTercih");
@@ -226,7 +233,7 @@ namespace WpfApplication1.Pages
         {
             if (comboProgturu.SelectedIndex != 0)
             {
-                cmd.CommandText = "SELECT * FROM OkulTercih ok,Okul o WHERE ok.OkulId=o.id and ProgramTuru='" + comboProgturu.SelectedItem + "'";
+                cmd.CommandText = "SELECT * FROM OkulTercih  WHERE ProgramTuru='" + comboProgturu.SelectedItem + "'";
                 cmd.Connection = baglanti;
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable("OkulTercih");
@@ -236,7 +243,7 @@ namespace WpfApplication1.Pages
             }
             else
             {
-                cmd.CommandText = "SELECT * FROM OkulTercih ok,Okul o WHERE ok.OkulId=o.id";
+                cmd.CommandText = "SELECT * FROM OkulTercih ";
                 cmd.Connection = baglanti;
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable("OkulTercih");
@@ -250,7 +257,7 @@ namespace WpfApplication1.Pages
         {
             if (comboUnituru.SelectedIndex != 0)
             {
-                cmd.CommandText = "SELECT * FROM OkulTercih ok,Okul o WHERE ok.OkulId=o.id and UniversiteTuru='" + comboUnituru.SelectedItem + "'";
+                cmd.CommandText = "SELECT * FROM OkulTercih WHERE UniversiteTuru='" + comboUnituru.SelectedItem + "'";
                 cmd.Connection = baglanti;
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable("OkulTercih");
@@ -260,7 +267,7 @@ namespace WpfApplication1.Pages
             }
             else
             {
-                cmd.CommandText = "SELECT * FROM OkulTercih ok,Okul o WHERE ok.OkulId=o.id";
+                cmd.CommandText = "SELECT * FROM OkulTercih ";
                 cmd.Connection = baglanti;
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable("OkulTercih");
@@ -275,7 +282,7 @@ namespace WpfApplication1.Pages
         {
             if (comboSehir.SelectedIndex != 0)
             {
-                cmd.CommandText = "SELECT * FROM OkulTercih ok,Okul o WHERE ok.OkulId=o.id and Sehir='" + comboSehir.SelectedItem + "'";
+                cmd.CommandText = "SELECT * FROM OkulTercih WHERE Sehir='" + comboSehir.SelectedItem + "'";
                 cmd.Connection = baglanti;
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable("OkulTercih");
@@ -285,7 +292,7 @@ namespace WpfApplication1.Pages
             }
             else
             {
-                cmd.CommandText = "SELECT * FROM OkulTercih ok,Okul o WHERE ok.OkulId=o.id";
+                cmd.CommandText = "SELECT * FROM OkulTercih";
                 cmd.Connection = baglanti;
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable("OkulTercih");

@@ -29,3 +29,34 @@ F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\UzmanYorumPage.g.cs
 F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\UzmanYorumPage.baml
 F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\YorumGoruntulemePage.g.cs
 F:\Yeni klasör\WpfApplication1\WpfApplication1\obj\Debug\YorumGoruntulemePage.baml
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\bin\Debug\WpfApplication1.exe.config
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.exe
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.pdb
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\bin\Debug\Db.mdf
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\bin\Debug\Db_log.ldf
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\bin\Debug\WpfApplication1.exe
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\bin\Debug\WpfApplication1.pdb
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.csprojResolveAssemblyReference.cache
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\GirisPage.g.cs
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\MainWindow.g.cs
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\KayıtPage.g.cs
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\OkulListesiPage.g.cs
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\TercihListesiPage.g.cs
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\UzmanPage.g.cs
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\UzmanYorumPage.g.cs
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\YorumGoruntulemePage.g.cs
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\App.g.cs
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1_Content.g.cs
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1_MarkupCompile.cache
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1_MarkupCompile.lref
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\GirisPage.baml
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\MainWindow.baml
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\KayıtPage.baml
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\OkulListesiPage.baml
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\TercihListesiPage.baml
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\UzmanPage.baml
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\UzmanYorumPage.baml
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\YorumGoruntulemePage.baml
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.g.resources
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.Properties.Resources.resources
+C:\Users\monary\Desktop\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.csproj.GenerateResource.Cache

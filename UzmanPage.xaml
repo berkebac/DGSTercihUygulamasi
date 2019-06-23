@@ -8,7 +8,7 @@
       d:DesignHeight="319.266" d:DesignWidth="490.596"
       Title="UzmanPage">
     <Grid Background="SkyBlue">
-        <DataGrid x:Name="dg" AutoGenerateColumns="False" Background="SkyBlue" CanUserAddRows="False">
+        <DataGrid x:Name="dg" AutoGenerateColumns="False" Background="SkyBlue" CanUserAddRows="False" Visibility="Visible">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding id}" ClipboardContentBinding="{x:Null}" Header="id"/>
                 <DataGridTextColumn Binding="{Binding Ad}" ClipboardContentBinding="{x:Null}" Header="Ogrenci Ad"/>
@@ -25,11 +25,14 @@
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel x:Name="stackTercih" Visibility="Hidden">
-            <Button x:Name="buttonGoster" Content="Yorumla" Width="100" Margin="10,10" Height="30"  Foreground="#FF1E722D" BorderBrush="#FF020202" Background="White" FontWeight="Bold" Click="buttonGoster_Click"></Button>
+            <WrapPanel HorizontalAlignment="Center">
+                <TextBox x:Name="tbOgrenciAdi" Width="100" Height="30" TextWrapping="Wrap" IsEnabled="False"></TextBox>
+                <Button x:Name="buttonGoster" Content="Yorumla" Width="100" Margin="10,10" Height="30"  Foreground="#FF1E722D" BorderBrush="#FF020202" Background="White" FontWeight="Bold" Click="buttonGoster_Click"></Button>
 
+            </WrapPanel>
+          
             <DataGrid x:Name="dgTercihler" AutoGenerateColumns="False" Background="SkyBlue" CanUserAddRows="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding Ad}" ClipboardContentBinding="{x:Null}" Header="Ogrenci Adı"/>
                     <DataGridTextColumn Binding="{Binding OkulAdi}" ClipboardContentBinding="{x:Null}" Header="Okul Adı"/>
                     <DataGridTextColumn Binding="{Binding Bolum}" ClipboardContentBinding="{x:Null}" Header="Bolum"/>
                     <DataGridTextColumn Binding="{Binding ProgramTuru}" ClipboardContentBinding="{x:Null}" Header="ProgramTuru"/>

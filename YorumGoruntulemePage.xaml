@@ -18,7 +18,7 @@
         <StackPanel Margin="0,90">
             
             <WrapPanel Width="300" Orientation="Horizontal">
-                <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Öğrenci Adı :" Width="110" Margin="5"/>
+                <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="Uzmanlik Alani :" Width="110" Margin="5"/>
                 <TextBox x:Name="textBoxOgrad" Height="23" TextWrapping="Wrap" Width="180"/>
             </WrapPanel>
             <WrapPanel Width="300" Orientation="Horizontal" Margin="7">

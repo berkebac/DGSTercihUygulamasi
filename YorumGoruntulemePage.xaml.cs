@@ -70,10 +70,19 @@ namespace WpfApplication1
             SqlDataReader dr = cmd.ExecuteReader();
             if(dr.Read())
             {
-
-               
-                textBoxOgrad.Text= dr["Ad"].ToString();
                 textBoxYorum.Text = dr["Yorum"].ToString();
+            }
+            dr.Close();
+            burdanalırım();
+        }
+        void burdanalırım()
+        {
+            cmd.CommandText = "SELECT * FROM Uzman u,Ogrenci o WHERE  u.Ad='" + comboUzman.SelectedItem + "' ";
+            cmd.Connection = baglanti;
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                textBoxOgrad.Text = dr["UzmanlikAlani"].ToString();
             }
         }
     }

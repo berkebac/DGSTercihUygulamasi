@@ -42,19 +42,36 @@ namespace WpfApplication1
             {
                 baglanti.Open();
             }
-            cmd.CommandText = "Select * From Ogrenci WHERE Email='" + textBox_email.Text + "' AND Sifre='" + textBox_sifre.Text + "' ";
-            // cmd.CommandText = "Select * From Ogrenci WHERE Ad='" + textBox_email.Text + "' ";
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+            try
             {
-                id = dr[0].ToString();
-                //NavigationWindow win = new NavigationWindow(); >>> yenı pencerede açar
-                //win.Content = new OkulListesiPage();
-                //win.Show();
+                cmd.CommandText = "Select * From Ogrenci WHERE Email='" + textBox_email.Text + "' AND Sifre='" + textBox_sifre.Text + "' ";
+                // cmd.CommandText = "Select * From Ogrenci WHERE Ad='" + textBox_email.Text + "' ";
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    id = dr[0].ToString();
+                    //NavigationWindow win = new NavigationWindow(); >>> yenı pencerede açar
+                    //win.Content = new OkulListesiPage();
+                    //win.Show();
 
-                OkulListesiPage olp = new OkulListesiPage();
-                this.NavigationService.Navigate(olp);
+                    MessageBox.Show("Başarıyla Giriş Yaptınız.");
+                    OkulListesiPage olp = new OkulListesiPage();
+                    this.NavigationService.Navigate(olp);
+                }
+                else
+                {
+                    dr.Close();
+                    MessageBox.Show("Email veya Şifre hatalı.");
+                    textBox_email.Text = "";
+                    textBox_sifre.Text = "";
+                }
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
 
         }
 
@@ -67,19 +84,36 @@ namespace WpfApplication1
 
         private void buttonuzmanGiris_Click(object sender, RoutedEventArgs e)
         {
-            cmd.CommandText = "Select * From Uzman WHERE Ad='" + textBox_email.Text + "'";
-
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+            try
             {
-                uid = dr[0].ToString();
-                //NavigationWindow win = new NavigationWindow(); >>> yenı pencerede açar
-                //win.Content = new OkulListesiPage();
-                //win.Show();
+                cmd.CommandText = "Select * From Uzman WHERE Ad='" + textBox_email.Text + "'";
 
-                UzmanPage up = new UzmanPage();
-                this.NavigationService.Navigate(up);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    uid = dr[0].ToString();
+                    //NavigationWindow win = new NavigationWindow(); >>> yenı pencerede açar
+                    //win.Content = new OkulListesiPage();
+                    //win.Show();
+
+                    MessageBox.Show("Uzman Girişi Yapıldı.");
+                    UzmanPage up = new UzmanPage();
+                    this.NavigationService.Navigate(up);
+                }
+                else
+                {
+                    MessageBox.Show("Email veya Şifre hatalı.");
+                    textBox_email.Text = "";
+                    textBox_sifre.Text = "";
+                }
+                dr.Close();
             }
+            catch (Exception)
+            {
+               
+                throw;
+            }
+           
         }
     }
 }

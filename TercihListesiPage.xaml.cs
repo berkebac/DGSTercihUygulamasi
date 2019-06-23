@@ -29,7 +29,7 @@ namespace WpfApplication1.Pages
             InitializeComponent();
             baglanti.Open();
             
-            cmd.CommandText = "SELECT * FROM Tercihler t,Okul ok,Ogrenci o WHERE t.OkulId=ok.id AND t.OgrenciId=o.id AND t.OgrenciId='"+GirisPage.id+"' ";
+            cmd.CommandText = "SELECT DISTINCT * FROM Tercihler t,Okul ok,Ogrenci o WHERE t.OkulId=ok.id AND t.OgrenciId=o.id AND t.OgrenciId='" + GirisPage.id+"' ";
             cmd.Connection = baglanti;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable("OkulTercih");
@@ -38,16 +38,5 @@ namespace WpfApplication1.Pages
             dg.ItemsSource = dt.DefaultView;
         }
 
-        private void b_Click(object sender, RoutedEventArgs e)
-        {
-            int silinecekid = Convert.ToInt32(((TextBlock)dg.Columns[0].GetCellContent(dg.SelectedItem)).Text);
-            cmd.CommandText = "SELECT * FROM Tercihler t WHERE t.id='" + silinecekid + "'";
-            cmd.Connection = baglanti;
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("Tercihler");
-            adapter.Fill(dt);
-
-            dg.ItemsSource = dt.DefaultView;
-        }
     }
 }
